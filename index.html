@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Randomizer</title>
+    <title>Google Style Username Generator</title>
     <style>
         body {
             font-family: Arial;
             text-align: center;
             margin-top: 100px;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #4CAF50;
+            background-color: #4285F4;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #357ae8;
         }
         #result {
             margin-top: 20px;
             font-size: 22px;
             font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
-    <h1>🎲 Random Name Picker</h1>
-    <button onclick="randomPick()">Pick a Random Name</button>
+    <h1>📧 Random Gmail-Style Username</h1>
+    <button onclick="generateUsername()">Generate Username</button>
 
     <div id="result"></div>
 
     <script>
-        function randomPick() {
-            var names = ["John", "Anna", "Mark", "Lisa", "David"];
-            var randomIndex = Math.floor(Math.random() * names.length);
-            document.getElementById("result").innerHTML = names[randomIndex];
+        function generateUsername() {
+            var firstNames = ["john", "anna", "mike", "lisa", "david", "alex"];
+            var lastNames = ["smith", "garcia", "lee", "martin", "brown", "davis"];
+
+            var randomFirst = firstNames[Math.floor(Math.random() * firstNames.length)];
+            var randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
+            var randomNumber = Math.floor(Math.random() * 1000);
+
+            var username = randomFirst + randomLast + randomNumber + "@gmail.com";
+
+            document.getElementById("result").innerHTML = username;
         }
     </script>
 
