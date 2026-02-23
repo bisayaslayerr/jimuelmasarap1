@@ -1,72 +1,46 @@
-# jimuelmasarap1
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Crush Mo Rin Ba Ako? 😳</title>
-  <style>
-    body {
-      background-color: #ffe6f0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding-top: 100px;
-      color: #d6336c;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-    button {
-      padding: 15px 35px;
-      font-size: 20px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .yes {
-      background-color: #d6336c;
-      color: white;
-      margin: 0 20px;
-    }
-    .no {
-      background-color: #999;
-      color: white;
-      position: absolute;
-    }
-    #message {
-      margin-top: 50px;
-      font-size: 22px;
-      font-weight: bold;
-      min-height: 40px;
-    }
-  </style>
+    <title>Simple Randomizer</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Crush mo rin ba ako?</h1>
+    <h1>🎲 Random Name Picker</h1>
+    <button onclick="randomPick()">Pick a Random Name</button>
 
-  <button class="yes" onclick="sayYes()">Oo 😍</button>
-  <button class="no" onmouseover="moveNo()">Hinde 😅</button>
+    <div id="result"></div>
 
-  <div id="message"></div>
-
-  <script>
-    function sayYes() {
-      document.getElementById('message').textContent = "Yay! Alam ko na, sweet tayo 🥰";
-    }
-
-    function moveNo() {
-      const button = document.querySelector('.no');
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      button.style.left = x + 'px';
-      button.style.top = y + 'px';
-    }
-
-    // Optional: Make "No" button not reachable on small screens
-    window.addEventListener('resize', moveNo);
-  </script>
+    <script>
+        function randomPick() {
+            var names = ["John", "Anna", "Mark", "Lisa", "David"];
+            var randomIndex = Math.floor(Math.random() * names.length);
+            document.getElementById("result").innerHTML = names[randomIndex];
+        }
+    </script>
 
 </body>
 </html>
